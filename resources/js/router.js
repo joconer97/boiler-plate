@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 
 import Sample from './views/Sample'
 import Layout from './views/Layout'
+import Login from './views/Login'
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -14,10 +15,16 @@ const router = new VueRouter({
         path: '/',
         component: Layout,
         children: [{
-            path: '/',
-            component: Sample,
-            name: 'Sample'
-        }]
+                path: '/',
+                component: Sample,
+                name: 'Sample'
+            },
+            {
+                path: '/login',
+                component: Login,
+                name: 'Login'
+            }
+        ]
     }]
 })
 
