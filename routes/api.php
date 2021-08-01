@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Models\User;
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,9 @@ use App\Models\User;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/register',[RegisterController::class,'register']);
+Route::post('/login',[LoginController::class,'authenticate']);
 
 Route::get('/user/{id}',function($id){
 
